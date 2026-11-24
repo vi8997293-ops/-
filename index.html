@@ -1,0 +1,1323 @@
+65<!DOCTYPE html>
+<html lang="km" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>វិទ្យាល័យ ហ៊ុន សែន សេរីភាព | Hun Sen Sereipheap High School</title>
+  <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            school: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#0b6e39',
+              800: '#074b26',
+              900: '#042e17',
+              gold: '#eab308',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans">
+
+  <!-- ==========================================================================
+       TOP GOVERNMENT & UTILITY BAR
+       ========================================================================== -->
+  <div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-3">
+        <span class="font-khmer-title text-amber-400">ព្រះរាជាណាចក្រកម្ពុជា</span>
+        <span class="text-slate-400">•</span>
+        <span class="font-khmer-sub text-slate-300">ជាតិ សាសនា ព្រះមហាក្សត្រ</span>
+        <span class="hidden md:inline text-slate-500">|</span>
+        <span class="hidden md:inline text-slate-400">ក្រសួងអប់រំ យុវជន និងកីឡា (MoEYS)</span>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <div class="hidden lg:flex items-center gap-2 text-slate-300">
+          <i class="fa-solid fa-location-dot text-emerald-400"></i>
+          <span>ក្រុងតាខ្មៅ ខេត្តកណ្តាល</span>
+        </div>
+        <div class="hidden md:flex items-center gap-2 text-slate-300">
+          <i class="fa-solid fa-phone text-amber-400"></i>
+          <span>024 935 555</span>
+        </div>
+
+        <!-- Language Switcher Toggle -->
+        <div class="inline-flex bg-slate-800 p-0.5 rounded-lg border border-slate-700">
+          <button id="lang-km-btn" onclick="setLanguage('km')" class="px-2.5 py-1 text-xs rounded-md font-semibold transition bg-emerald-700 text-white flex items-center gap-1">
+            <span>🇰🇭</span> <span>ភាសាខ្មែរ</span>
+          </button>
+          <button id="lang-en-btn" onclick="setLanguage('en')" class="px-2.5 py-1 text-xs rounded-md font-semibold transition text-slate-400 hover:text-white flex items-center gap-1">
+            <span>🇬🇧</span> <span>English</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       STICKY MAIN NAVIGATION BAR
+       ========================================================================== -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        
+        <!-- School Crest & Identity -->
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="relative">
+            <img src="assets/images/logo.jpg" alt="Hun Sen Sereipheap High School Crest" 
+                 class="w-14 h-14 rounded-full border-2 border-emerald-600 shadow-md transition group-hover:scale-105">
+            <span class="absolute -bottom-1 -right-1 bg-amber-500 w-4 h-4 rounded-full border-2 border-white flex items-center justify-center text-[8px] text-white">
+              <i class="fa-solid fa-check"></i>
+            </span>
+          </div>
+          <div>
+            <h1 class="font-khmer-title text-base sm:text-lg text-emerald-800 tracking-wide leading-tight group-hover:text-emerald-700" data-i18n="school_name_header">
+              វិទ្យាល័យ ហ៊ុន សែន សេរីភាព
+            </h1>
+            <p class="text-xs font-semibold tracking-wider uppercase text-slate-500" data-i18n="school_subtitle_header">
+              ក្រុងតាខ្មៅ ខេត្តកណ្តាល
+            </p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden xl:flex items-center gap-6 font-medium text-sm text-slate-700">
+          <a href="#home" class="hover:text-emerald-700 transition" data-i18n="nav_home">ទំព័រដើម</a>
+          <a href="#about" class="hover:text-emerald-700 transition" data-i18n="nav_about">អំពីសាលា</a>
+          <a href="#academics" class="hover:text-emerald-700 transition" data-i18n="nav_academics">កម្មវិធីសិក្សា</a>
+          <a href="#stem" class="hover:text-emerald-700 transition" data-i18n="nav_stem">STEM & បច្ចេកវិទ្យា</a>
+          <a href="#campus" class="hover:text-emerald-700 transition" data-i18n="nav_campus">ជីវិតសិក្សា</a>
+          <a href="#news" class="hover:text-emerald-700 transition" data-i18n="nav_news">ព័ត៌មាន</a>
+          <a href="#contact" class="hover:text-emerald-700 transition" data-i18n="nav_contact">ទំនាក់ទំនង</a>
+        </nav>
+
+        <!-- Header CTA Buttons -->
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="#check-status" class="px-3.5 py-2 text-xs font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 rounded-xl border border-emerald-200 transition flex items-center gap-2">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span data-i18n="nav_check_status">ពិនិត្យពាក្យសុំ</span>
+          </a>
+          <a href="#registration-section" class="px-4 py-2.5 text-xs sm:text-sm font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl shadow-md hover:shadow-emerald-700/20 transition flex items-center gap-2">
+            <i class="fa-solid fa-user-pen"></i>
+            <span data-i18n="btn_register_now">ចុះឈ្មោះភ្លាមៗ</span>
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger Toggle -->
+        <div class="flex xl:hidden items-center gap-2">
+          <button id="mobile-menu-btn" aria-label="Toggle menu" class="p-2 text-slate-600 hover:text-emerald-700 rounded-lg hover:bg-slate-100 focus:outline-none">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu-drawer" class="hidden xl:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 shadow-xl">
+      <a href="#home" class="block py-2 text-slate-800 hover:text-emerald-700 font-medium" data-i18n="nav_home">ទំព័រដើម</a>
+      <a href="#about" class="block py-2 text-slate-800 hover:text-emerald-700 font-medium" data-i18n="nav_about">អំពីសាលា</a>
+      <a href="#academics" class="block py-2 text-slate-800 hover:text-emerald-700 font-medium" data-i18n="nav_academics">កម្មវិធីសិក្សា</a>
+      <a href="#stem" class="block py-2 text-slate-800 hover:text-emerald-700 font-medium" data-i18n="nav_stem">STEM & បច្ចេកវិទ្យា</a>
+      <a href="#campus" class="block py-2 text-slate-800 hover:text-emerald-700 font-medium" data-i18n="nav_campus">ជីវិតសិក្សា</a>
+      <a href="#news" class="block py-2 text-slate-800 hover:text-emerald-700 font-medium" data-i18n="nav_news">ព័ត៌មាន</a>
+      <a href="#contact" class="block py-2 text-slate-800 hover:text-emerald-700 font-medium" data-i18n="nav_contact">ទំនាក់ទំនង</a>
+      <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
+        <a href="#check-status" class="w-full text-center py-2.5 text-xs font-semibold text-emerald-800 bg-emerald-50 rounded-xl" data-i18n="nav_check_status">
+          ពិនិត្យពាក្យសុំ
+        </a>
+        <a href="#registration-section" class="w-full text-center py-2.5 text-xs font-semibold text-white bg-emerald-700 rounded-xl" data-i18n="btn_register_now">
+          ចុះឈ្មោះភ្លាមៗ
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION WITH CAMPUS ASSEMBLY BACKGROUND
+       ========================================================================== -->
+  <section id="home" class="relative min-h-[580px] lg:min-h-[640px] flex items-center justify-center text-white overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="assets/images/campus-assembly.jpg" alt="Hun Sen Sereipheap High School Morning Assembly" 
+           class="w-full h-full object-cover object-center transform scale-105 motion-safe:animate-[pulse_10s_ease-in-out_infinite]">
+      <div class="absolute inset-0 hero-gradient"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-20 text-center">
+      
+      <!-- Top Distinction Pill -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-medium mb-6 text-emerald-100">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+        <span data-i18n="hero_badge">🎓 គ្រឹះស្ថានមធ្យមសិក្សាគំរូនវានុវត្តន៍ និងឌីជីថល</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h2 class="font-khmer-title text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-wide drop-shadow-md mb-4 text-white leading-tight" data-i18n="hero_title">
+        វិទ្យាល័យ ហ៊ុន សែន សេរីភាព
+      </h2>
+      <p class="text-base sm:text-xl md:text-2xl text-amber-300 font-semibold mb-6 max-w-3xl mx-auto drop-shadow" data-i18n="hero_subtitle">
+        បណ្តុះបណ្តាលចំណេះដឹង បច្ចេកវិទ្យា វិន័យ សីលធម៌ និងគុណធម៌ ឆ្ពោះទៅរកអនាគតដ៏ភ្លឺស្វាង
+      </p>
+
+      <p class="text-xs sm:text-base text-slate-200/90 max-w-2xl mx-auto mb-8 font-light leading-relaxed" data-i18n="hero_desc">
+        ស្ថិតនៅចំកណ្តាលក្រុងតាខ្មៅ ខេត្តកណ្តាល វិទ្យាល័យ ហ៊ុន សែន សេរីភាព គឺជាសាលារៀនឈានមុខគេក្នុងការអប់រំបែបឌីជីថល កម្មវិធីវិទ្យាសាស្ត្រ និងបច្ចេកវិទ្យា (STEM) និងការអភិវឌ្ឍសមត្ថភាពសិស្សគ្រប់ជ្រុងជ្រោយ។
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#registration-section" class="w-full sm:w-auto px-8 py-4 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-2xl shadow-xl transition transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
+          <i class="fa-solid fa-graduation-cap text-lg"></i>
+          <span data-i18n="btn_hero_register">ចុះឈ្មោះចូលរៀនឆ្នាំសិក្សាថ្មី</span>
+        </a>
+        <a href="#campus" class="w-full sm:w-auto px-8 py-4 bg-white/20 hover:bg-white/30 backdrop-blur-md text-white font-semibold rounded-2xl border border-white/30 transition flex items-center justify-center gap-2">
+          <i class="fa-regular fa-image"></i>
+          <span data-i18n="btn_hero_explore">ទស្សនាសាលារៀន</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       KEY STATISTICS COUNTER BAR
+       ========================================================================== -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-20">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 bg-white rounded-3xl p-6 md:p-8 shadow-xl border border-slate-100">
+      
+      <div class="text-center p-3 border-r border-slate-100 last:border-0">
+        <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-xl mx-auto mb-2">
+          <i class="fa-solid fa-users"></i>
+        </div>
+        <div class="text-2xl sm:text-3xl font-extrabold text-slate-900">2,500+</div>
+        <div class="text-xs sm:text-sm text-slate-500 mt-1 font-medium" data-i18n="stat_students">សិស្សានុសិស្សកំពុងសិក្សា</div>
+      </div>
+
+      <div class="text-center p-3 lg:border-r border-slate-100">
+        <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl mx-auto mb-2">
+          <i class="fa-solid fa-chalkboard-user"></i>
+        </div>
+        <div class="text-2xl sm:text-3xl font-extrabold text-slate-900">120+</div>
+        <div class="text-xs sm:text-sm text-slate-500 mt-1 font-medium" data-i18n="stat_teachers">លោកគ្រូ-អ្នកគ្រូបង្រៀន</div>
+      </div>
+
+      <div class="text-center p-3 border-r border-slate-100 last:border-0">
+        <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl mx-auto mb-2">
+          <i class="fa-solid fa-award"></i>
+        </div>
+        <div class="text-2xl sm:text-3xl font-extrabold text-slate-900">95%+</div>
+        <div class="text-xs sm:text-sm text-slate-500 mt-1 font-medium" data-i18n="stat_bacii">អត្រាជាប់សញ្ញាបត្របាក់ឌុប</div>
+      </div>
+
+      <div class="text-center p-3">
+        <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl mx-auto mb-2">
+          <i class="fa-solid fa-laptop-code"></i>
+        </div>
+        <div class="text-2xl sm:text-3xl font-extrabold text-slate-900">50+</div>
+        <div class="text-xs sm:text-sm text-slate-500 mt-1 font-medium" data-i18n="stat_grade_a">សិស្សនិទ្ទេស A ឆ្នើមប្រចាំឆ្នាំ</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       ABOUT THE SCHOOL SECTION
+       ========================================================================== -->
+  <section id="about" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left: School Gate Image Showcase -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
+          <img src="assets/images/school-gate.jpg" alt="Hun Sen Sereipheap High School Gate" 
+               class="w-full h-[460px] object-cover transition duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+          
+          <div class="absolute bottom-6 left-6 right-6 text-white">
+            <span class="inline-block bg-emerald-600 text-xs font-bold px-3 py-1 rounded-full mb-2">
+              <i class="fa-solid fa-location-dot mr-1"></i> សង្កាត់តាខ្មៅ ក្រុងតាខ្មៅ ខេត្តកណ្តាល
+            </span>
+            <h4 class="text-lg font-bold font-khmer-sub">ច្រកចូលធំនៃវិទ្យាល័យ ហ៊ុន សែន សេរីភាព</h4>
+            <p class="text-xs text-slate-300">ស្ថាបត្យកម្មរចនាបថខ្មែរ ស្កឹមស្កៃ និងមានរបៀបរៀបរយ</p>
+          </div>
+        </div>
+
+        <!-- Floating Badge -->
+        <div class="absolute -top-5 -right-5 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
+          <img src="assets/images/logo.jpg" alt="Logo" class="w-12 h-12 rounded-full border border-emerald-600">
+          <div>
+            <span class="text-xs font-bold text-emerald-800 block">គុណភាព • សីលធម៌</span>
+            <span class="text-[11px] text-slate-500">គ្រឹះស្ថានអប់រំគំរូ</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Detailed About Information -->
+      <div class="lg:col-span-7 space-y-6">
+        <div>
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full mb-3" data-i18n="about_badge">
+            អំពីស្ថាប័នអប់រំយើង
+          </span>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 font-khmer-sub leading-tight" data-i18n="about_title">
+            ប្រវត្តិ និងទស្សនវិស័យនៃការអប់រំ
+          </h2>
+        </div>
+
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base text-justify" data-i18n="about_p1">
+          វិទ្យាល័យ ហ៊ុន សែន សេរីភាព មានទីតាំងស្ថិតនៅសង្កាត់តាខ្មៅ ក្រុងតាខ្មៅ ខេត្តកណ្តាល ជាគ្រឹះស្ថានអប់រំរដ្ឋឈានមុខគេមួយដែលបាននិងកំពុងបណ្តុះបណ្តាលទំពាំងស្នងឫស្សីរាប់ម៉ឺននាក់សម្រាប់កម្ពុជា។ សាលារៀនត្រូវបានទទួលស្គាល់យ៉ាងទូលំទូលាយចំពោះស្នាដៃអប់រំឆ្នើម វិន័យរឹងមាំ និងបរិយាកាសសិក្សាស្អាតបៃតង។
+        </p>
+
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base text-justify" data-i18n="about_p2">
+          យើងផ្តោតសំខាន់លើការរួមបញ្ចូលគ្នារវាងកម្មវិធីសិក្សាជាតិរបស់ក្រសួងអប់រំ យុវជន និងកីឡា ជាមួយនឹងនវានុវត្តន៍បច្ចេកវិទ្យាព័ត៌មានវិទ្យា បន្ទប់ពិសោធន៍ STEM ទំនើប និងការបណ្តុះគំនិតច្នៃប្រឌិតដើម្បីត្រៀមខ្លួនសម្រាប់បដិវត្តន៍ឧស្សាហកម្ម ៤.០។
+        </p>
+
+        <!-- Vision, Mission, Values Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+          
+          <div class="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm mb-2">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <h4 class="font-bold text-emerald-900 text-sm mb-1" data-i18n="vision_title">ទស្សនវិស័យ</h4>
+            <p class="text-xs text-slate-600 leading-relaxed" data-i18n="vision_desc">
+              ក្លាយជាមជ្ឈមណ្ឌលអប់រំចំណេះទូទៅកម្រិតខ្ពស់គំរូ ដែលផ្តល់ការអប់រំប្រកបដោយគុណភាព សមត្ថភាពបច្ចេកវិទ្យា និងក្រមសីលធម៌ខ្ពស់។
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-200">
+            <div class="w-8 h-8 rounded-lg bg-amber-600 text-white flex items-center justify-center text-sm mb-2">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <h4 class="font-bold text-amber-900 text-sm mb-1" data-i18n="mission_title">បេសកកម្ម</h4>
+            <p class="text-xs text-slate-600 leading-relaxed" data-i18n="mission_desc">
+              បណ្តុះបណ្តាលសិស្សឱ្យមានចំណេះដឹងទូលំទូលាយ ជំនាញឌីជីថល ស្មារតីស្រាវជ្រាវ ស្រឡាញ់វប្បធម៌ជាតិ និងមានស្មារតីទទួលខុសត្រូវខ្ពស់ក្នុងសង្គម។
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-blue-50/70 border border-blue-200">
+            <div class="w-8 h-8 rounded-lg bg-blue-700 text-white flex items-center justify-center text-sm mb-2">
+              <i class="fa-solid fa-gem"></i>
+            </div>
+            <h4 class="font-bold text-blue-900 text-sm mb-1" data-i18n="values_title">គុណតម្លៃស្នូល</h4>
+            <p class="text-xs text-slate-600 leading-relaxed" data-i18n="values_desc">
+              ចំណេះដឹង • វិន័យ • សីលធម៌ • នវានុវត្តន៍ • សាមគ្គីភាព
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ACADEMIC TRACKS & STEM INNOVATION
+       ========================================================================== -->
+  <section id="academics" class="py-20 bg-slate-100/70 border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full mb-3" data-i18n="acad_badge">
+          ឧត្តមភាពនៃការបង្រៀន
+        </span>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 font-khmer-sub leading-tight mb-4" data-i18n="acad_title">
+          កម្មវិធីសិក្សា និងការអប់រំបច្ចេកវិទ្យា STEM
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600" data-i18n="acad_desc">
+          យើងផ្តល់ជូននូវកម្មវិធីអប់រំមធ្យមសិក្សាទុតិយភូមិស្របតាមស្តង់ដារជាតិ បែងចែកជាពីរផ្នែកច្បាស់លាស់ គួបផ្សំនឹងបន្ទប់កុំព្យូទ័រ និងពិសោធន៍កម្រិតខ្ពស់។
+        </p>
+      </div>
+
+      <!-- Tracks Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        
+        <!-- Science Track Card -->
+        <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl">
+                🔬
+              </span>
+              <span class="text-xs font-bold px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+                ថ្នាក់ទី ១០-១២
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3" data-i18n="track_science_title">
+              ថ្នាក់វិទ្យាសាស្ត្រពិត (Science Track)
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-6" data-i18n="track_science_desc">
+              ផ្តោតលើមុខវិជ្ជាស្នូល៖ គណិតវិទ្យា, រូបវិទ្យា, គីមីវិទ្យា, ជីវវិទ្យា និងព័ត៌មានវិទ្យា។ ស័ក្តិសមបំផុតសម្រាប់សិស្សដែលមានបំណងបន្តការសិក្សាផ្នែក វិស្វកម្ម, វេជ្ជសាស្ត្រ, បច្ចេកវិទ្យា និងស្ថាបត្យកម្ម។
+            </p>
+          </div>
+          <div class="border-t border-slate-100 pt-4 flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
+            <span class="bg-slate-100 px-3 py-1 rounded-lg">គណិតវិទ្យាកម្រិតខ្ពស់</span>
+            <span class="bg-slate-100 px-3 py-1 rounded-lg">រូបវិទ្យា</span>
+            <span class="bg-slate-100 px-3 py-1 rounded-lg">គីមីវិទ្យា</span>
+            <span class="bg-slate-100 px-3 py-1 rounded-lg">ជីវវិទ្យា</span>
+            <span class="bg-slate-100 px-3 py-1 rounded-lg">Coding & ICT</span>
+          </div>
+        </div>
+
+        <!-- Social Science Track Card -->
+        <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl">
+                📚
+              </span>
+              <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
+                ថ្នាក់ទី ១០-១២
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3" data-i18n="track_social_title">
+              ថ្នាក់វិទ្យាសាស្ត្រសង្គម (Social Science Track)
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-6" data-i18n="track_social_desc">
+              ផ្តោតលើមុខវិជ្ជា៖ អក្សរសាស្ត្រខ្មែរ, ប្រវត្តិវិទ្យា, ភូមិវិទ្យា, ផែនដីវិទ្យា, សីលធម៌-ពលរដ្ឋវិជ្ជា និងសេដ្ឋកិច្ច។ ស័ក្តិសមសម្រាប់ជំនាញ ច្បាប់, ទំនាក់ទំនងអន្តរជាតិ, គ្រប់គ្រង និងធុរកិច្ច។
+            </p>
+          </div>
+          <div class="border-t border-slate-100 pt-4 flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
+            <span class="bg-slate-100 px-3 py-1 rounded-lg">អក្សរសាស្ត្រខ្មែរ</span>
+            <span class="bg-slate-100 px-3 py-1 rounded-lg">ប្រវត្តិវិទ្យា</span>
+            <span class="bg-slate-100 px-3 py-1 rounded-lg">ភូមិវិទ្យា</span>
+            <span class="bg-slate-100 px-3 py-1 rounded-lg">សីលធម៌-ពលរដ្ឋ</span>
+            <span class="bg-slate-100 px-3 py-1 rounded-lg">សេដ្ឋកិច្ចវិទ្យា</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- STEM Showcase Feature Row -->
+      <div id="stem" class="bg-gradient-to-r from-emerald-800 to-slate-900 rounded-3xl p-8 lg:p-12 text-white shadow-2xl overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-7 space-y-4">
+            <span class="inline-block bg-amber-400 text-slate-950 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
+              <i class="fa-solid fa-microchip mr-1"></i> Digital Learning Transformation
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-bold font-khmer-sub leading-snug" data-i18n="stem_title">
+              ការអប់រំឌីជីថល & បន្ទប់ពិសោធន៍ STEM ទំនើប
+            </h3>
+            <p class="text-slate-200 text-sm sm:text-base leading-relaxed" data-i18n="stem_desc">
+              បំពាក់ដោយកុំព្យូទ័រយួរដៃ និងលើតុរាប់សិបគ្រឿង បណ្តាញអ៊ីនធឺណិតល្បឿនលឿន ប្រព័ន្ធគ្រប់គ្រងការរៀនសូត្រ (LMS) និងឧបករណ៍ស្រាវជ្រាវវិទ្យាសាស្ត្រទំនើប ជួយឱ្យសិស្សអនុវត្តផ្ទាល់។
+            </p>
+            <ul class="space-y-2 text-xs sm:text-sm text-emerald-100 pt-2">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-amber-400"></i>
+                <span>កម្មវិធីសិក្សាកុំព្យូទ័រ និងការសរសេរកូដមូលដ្ឋាន (Coding & Informatics)</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-amber-400"></i>
+                <span>ការពិសោធន៍ជាក់ស្តែងក្នុងបន្ទប់ពិសោធន៍វិទ្យាសាស្ត្រទំនើប</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-amber-400"></i>
+                <span>ប្រព័ន្ធគ្រប់គ្រងការរៀនសូត្រឌីជីថល (School LMS & E-Library)</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Photo of the actual Computer Lab -->
+          <div class="lg:col-span-5 relative group cursor-pointer" 
+               onclick="openImageModal('assets/images/computer-lab.jpg', 'បន្ទប់រៀនបច្ចេកវិទ្យា និងកុំព្យូទ័រ', 'Modern STEM & Computer Lab', 'ការបណ្តុះបណ្តាលជំនាញកុំព្យូទ័រ និងកម្មវិធីសិក្សាឌីជីថល', 'Hands-on computer training and digital literacy')">
+            <div class="rounded-2xl overflow-hidden border-2 border-emerald-500/50 shadow-2xl">
+              <img src="assets/images/computer-lab.jpg" alt="Hun Sen Sereipheap High School Computer Lab" 
+                   class="w-full h-64 sm:h-72 object-cover transition duration-300 group-hover:scale-105">
+            </div>
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition rounded-2xl flex items-center justify-center text-white text-sm font-semibold gap-2">
+              <i class="fa-solid fa-magnifying-glass-plus text-lg"></i>
+              <span>ពង្រីករូបភាព / Zoom</span>
+            </div>
+            <p class="text-center text-xs text-slate-300 mt-2">
+              📸 ទិដ្ឋភាពជាក់ស្តែងនៃបន្ទប់កុំព្យូទ័រវិទ្យាល័យ ហ៊ុន សែន សេរីភាព
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CAMPUS LIFE & PHOTO GALLERY
+       ========================================================================== -->
+  <section id="campus" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="inline-block text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full mb-3" data-i18n="campus_badge">
+        ទិដ្ឋភាព និងជីវិតសិស្ស
+      </span>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 font-khmer-sub leading-tight mb-4" data-i18n="campus_title">
+        បរិវេណសាលា និងសកម្មភាពចម្រុះ
+      </h2>
+      <p class="text-sm sm:text-base text-slate-600" data-i18n="campus_desc">
+        បរិយាកាសសិក្សាប្រកបដោយផាសុកភាព ទីធ្លាធំទូលាយ បៃតង និងសកម្មភាពអប់រំក្រៅម៉ោងសិក្សាយ៉ាងសម្បូរបែប។
+      </p>
+    </div>
+
+    <!-- 4 User Uploaded Photos Gallery Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Photo 1: Gate -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 group cursor-pointer transition hover:-translate-y-1 hover:shadow-xl"
+           onclick="openImageModal('assets/images/school-gate.jpg', 'ក្លោងទ្វារ និងផ្លូវចូលសាលា', 'Grand Entrance & Arch Gate', 'រចនាបថខ្មែរដ៏ស្កឹមស្កៃ បង្ហាញពីកិត្តិនាម និងវិន័យថ្លៃថ្នូរ', 'Reflecting traditional Khmer architectural grace and school prestige')">
+        <div class="h-56 overflow-hidden relative">
+          <img src="assets/images/school-gate.jpg" alt="School Gate" class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
+          <span class="absolute top-3 right-3 bg-slate-900/70 text-white text-xs px-2.5 py-1 rounded-full backdrop-blur-sm">
+            <i class="fa-solid fa-expand"></i>
+          </span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-bold text-slate-900 text-sm mb-1" data-i18n="photo_gate_title">ក្លោងទ្វារ និងផ្លូវចូលសាលា</h4>
+          <p class="text-xs text-slate-500 line-clamp-2" data-i18n="photo_gate_sub">រចនាបថខ្មែរដ៏ស្កឹមស្កៃ បង្ហាញពីកិត្តិនាម និងវិន័យថ្លៃថ្នូរនៃវិទ្យាល័យ</p>
+        </div>
+      </div>
+
+      <!-- Photo 2: Assembly -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 group cursor-pointer transition hover:-translate-y-1 hover:shadow-xl"
+           onclick="openImageModal('assets/images/campus-assembly.jpg', 'ពិធីគោរពទង់ជាតិ និងជួបជុំសិស្សានុសិស្ស', 'Morning Assembly & Flag Ceremony', 'សិស្សានុសិស្សរាប់ពាន់នាក់ចូលរួមគោរពទង់ជាតិ និងស្តាប់ការណែនាំ', 'Thousands of disciplined students gathered in the central courtyard')">
+        <div class="h-56 overflow-hidden relative">
+          <img src="assets/images/campus-assembly.jpg" alt="Morning Assembly" class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
+          <span class="absolute top-3 right-3 bg-slate-900/70 text-white text-xs px-2.5 py-1 rounded-full backdrop-blur-sm">
+            <i class="fa-solid fa-expand"></i>
+          </span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-bold text-slate-900 text-sm mb-1" data-i18n="photo_assembly_title">ពិធីគោរពទង់ជាតិ និងជួបជុំ</h4>
+          <p class="text-xs text-slate-500 line-clamp-2" data-i18n="photo_assembly_sub">សិស្សានុសិស្សរាប់ពាន់នាក់ចូលរួមគោរពទង់ជាតិ និងស្តាប់ការណែនាំប្រកបដោយវិន័យ</p>
+        </div>
+      </div>
+
+      <!-- Photo 3: Computer Lab -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 group cursor-pointer transition hover:-translate-y-1 hover:shadow-xl"
+           onclick="openImageModal('assets/images/computer-lab.jpg', 'បន្ទប់រៀនបច្ចេកវិទ្យា និងកុំព្យូទ័រ', 'Modern STEM & Computer Lab', 'ការបណ្តុះបណ្តាលជំនាញកុំព្យូទ័រ និងកម្មវិធីសិក្សាឌីជីថលទំនើប', 'Hands-on computer training, digital literacy, and e-learning sessions')">
+        <div class="h-56 overflow-hidden relative">
+          <img src="assets/images/computer-lab.jpg" alt="Computer Lab" class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
+          <span class="absolute top-3 right-3 bg-slate-900/70 text-white text-xs px-2.5 py-1 rounded-full backdrop-blur-sm">
+            <i class="fa-solid fa-expand"></i>
+          </span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-bold text-slate-900 text-sm mb-1" data-i18n="photo_lab_title">បន្ទប់រៀនបច្ចេកវិទ្យា & STEM</h4>
+          <p class="text-xs text-slate-500 line-clamp-2" data-i18n="photo_lab_sub">ការបណ្តុះបណ្តាលជំនាញកុំព្យូទ័រ និងកម្មវិធីសិក្សាឌីជីថលទំនើប</p>
+        </div>
+      </div>
+
+      <!-- Photo 4: Emblem -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 group cursor-pointer transition hover:-translate-y-1 hover:shadow-xl"
+           onclick="openImageModal('assets/images/logo.jpg', 'និមិត្តសញ្ញាសាលា (School Crest)', 'Official School Seal & Crest', 'តំណាងឱ្យការគិតស៊ីជម្រៅ ចំណេះដឹងវិទ្យាសាស្ត្រ គណិតវិទ្យា និងបច្ចេកវិទ្យា', 'Symbolizing intellect, technological advancement, mathematics, and science')">
+        <div class="h-56 overflow-hidden relative flex items-center justify-center bg-emerald-50/50 p-4">
+          <img src="assets/images/logo.jpg" alt="School Seal" class="h-44 w-44 object-contain rounded-full border-2 border-emerald-600 transition duration-300 group-hover:scale-105">
+          <span class="absolute top-3 right-3 bg-slate-900/70 text-white text-xs px-2.5 py-1 rounded-full backdrop-blur-sm">
+            <i class="fa-solid fa-expand"></i>
+          </span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-bold text-slate-900 text-sm mb-1" data-i18n="photo_emblem_title">និមិត្តសញ្ញាសាលា (Crest)</h4>
+          <p class="text-xs text-slate-500 line-clamp-2" data-i18n="photo_emblem_sub">តំណាងឱ្យការគិតស៊ីជម្រៅ ចំណេះដឹងវិទ្យាសាស្ត្រ គណិតវិទ្យា និងបច្ចេកវិទ្យា</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Student Clubs and Activities -->
+    <div class="mt-12 bg-emerald-50/50 rounded-3xl p-6 sm:p-8 border border-emerald-100 flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <h4 class="font-bold text-emerald-950 text-base mb-1">ក្លឹបសិក្សា និងចលនាយុវជនសកម្ម</h4>
+        <p class="text-xs text-slate-600">សិស្សានុសិស្សត្រូវបានលើកទឹកចិត្តឱ្យចូលរួមក្នុងក្លឹបក្រៅម៉ោងសិក្សាជាច្រើន</p>
+      </div>
+      <div class="flex flex-wrap gap-2 text-xs font-semibold">
+        <span class="bg-white text-emerald-800 border border-emerald-200 px-3.5 py-2 rounded-xl flex items-center gap-1.5 shadow-sm">
+          <i class="fa-solid fa-heart-pulse text-rose-500"></i> កាកបាទក្រហមកម្ពុជា
+        </span>
+        <span class="bg-white text-emerald-800 border border-emerald-200 px-3.5 py-2 rounded-xl flex items-center gap-1.5 shadow-sm">
+          <i class="fa-solid fa-code text-blue-500"></i> ក្លឹប Coding & Robotics
+        </span>
+        <span class="bg-white text-emerald-800 border border-emerald-200 px-3.5 py-2 rounded-xl flex items-center gap-1.5 shadow-sm">
+          <i class="fa-solid fa-futbol text-emerald-600"></i> កីឡាបាល់ទាត់ និងបាល់ទះ
+        </span>
+        <span class="bg-white text-emerald-800 border border-emerald-200 px-3.5 py-2 rounded-xl flex items-center gap-1.5 shadow-sm">
+          <i class="fa-solid fa-leaf text-green-600"></i> ចលនាសាលារៀនបៃតង
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ONLINE STUDENT REGISTRATION PORTAL
+       ========================================================================== -->
+  <section id="registration-section" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-emerald-700/20 blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 rounded-full bg-amber-500/10 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="inline-block text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-400/10 border border-amber-400/30 px-3.5 py-1 rounded-full mb-3" data-i18n="reg_badge">
+          ការចុះឈ្មោះចូលរៀន
+        </span>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-khmer-sub leading-tight mb-3" data-i18n="reg_title">
+          ប្រព័ន្ធចុះឈ្មោះចូលរៀនតាមអ៊ីនធឺណិត
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-300 font-light" data-i18n="reg_desc">
+          សូមបំពេញព័ត៌មានខាងក្រោមដើម្បីចុះឈ្មោះចូលរៀននៅវិទ្យាល័យ ហ៊ុន សែន សេរីភាព សម្រាប់ឆ្នាំសិក្សាថ្មី។ លោកអ្នកនឹងទទួលបានប័ណ្ណចុះឈ្មោះផ្លូវការភ្លាមៗ!
+        </p>
+      </div>
+
+      <!-- Registration Wizard Card -->
+      <div class="bg-white text-slate-900 rounded-3xl shadow-2xl p-6 sm:p-10 border border-slate-100">
+        
+        <!-- Wizard Steps Indicator -->
+        <div class="mb-8">
+          <div class="relative flex items-center justify-between max-w-2xl mx-auto">
+            <!-- Background Line -->
+            <div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-slate-200 z-0"></div>
+            <!-- Dynamic Progress Fill -->
+            <div id="wizard-progress-bar" class="absolute left-0 top-1/2 -translate-y-1/2 h-1 bg-emerald-600 z-0 transition-all duration-300" style="width: 0%;"></div>
+
+            <!-- Step Circles -->
+            <div class="relative z-10 flex flex-col items-center">
+              <div id="step-indicator-1" class="step-circle active w-10 h-10 rounded-full border-2 border-slate-300 bg-white font-bold flex items-center justify-center text-sm shadow">
+                1
+              </div>
+              <span class="text-[11px] font-semibold text-slate-600 mt-2 hidden sm:block" data-i18n="step1_label">ព័ត៌មានផ្ទាល់ខ្លួន</span>
+            </div>
+
+            <div class="relative z-10 flex flex-col items-center">
+              <div id="step-indicator-2" class="step-circle w-10 h-10 rounded-full border-2 border-slate-300 bg-white font-bold flex items-center justify-center text-sm shadow">
+                2
+              </div>
+              <span class="text-[11px] font-semibold text-slate-600 mt-2 hidden sm:block" data-i18n="step2_label">ជម្រើសថ្នាក់រៀន</span>
+            </div>
+
+            <div class="relative z-10 flex flex-col items-center">
+              <div id="step-indicator-3" class="step-circle w-10 h-10 rounded-full border-2 border-slate-300 bg-white font-bold flex items-center justify-center text-sm shadow">
+                3
+              </div>
+              <span class="text-[11px] font-semibold text-slate-600 mt-2 hidden sm:block" data-i18n="step3_label">អាណាព្យាបាល</span>
+            </div>
+
+            <div class="relative z-10 flex flex-col items-center">
+              <div id="step-indicator-4" class="step-circle w-10 h-10 rounded-full border-2 border-slate-300 bg-white font-bold flex items-center justify-center text-sm shadow">
+                4
+              </div>
+              <span class="text-[11px] font-semibold text-slate-600 mt-2 hidden sm:block" data-i18n="step4_label">ឯកសារ & រូបថត</span>
+            </div>
+
+            <div class="relative z-10 flex flex-col items-center">
+              <div id="step-indicator-5" class="step-circle w-10 h-10 rounded-full border-2 border-slate-300 bg-white font-bold flex items-center justify-center text-sm shadow">
+                5
+              </div>
+              <span class="text-[11px] font-semibold text-slate-600 mt-2 hidden sm:block" data-i18n="step5_label">បញ្ជាក់ & ដាក់ពាក្យ</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- FORM BEGINS -->
+        <form id="registration-form" novalidate>
+          
+          <!-- ================= STEP 1: PERSONAL INFORMATION ================= -->
+          <div id="step-panel-1" class="space-y-6">
+            <div class="border-b border-slate-100 pb-3">
+              <h3 class="text-lg font-bold text-emerald-800 flex items-center gap-2 font-khmer-sub">
+                <i class="fa-regular fa-id-badge text-emerald-600"></i>
+                <span data-i18n="step1_label">ព័ត៌មានផ្ទាល់ខ្លួនរបស់សិស្ស</span>
+              </h3>
+              <p class="text-xs text-slate-500">សូមបញ្ចូលព័ត៌មានឱ្យបានច្បាស់លាស់តាមសំបុត្រកំណើត</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="reg_khmer_name" class="block text-xs font-bold text-slate-700 mb-1" data-i18n="lbl_khmer_name">
+                  គោត្តនាម និងនាម (ជាភាសាខ្មែរ) *
+                </label>
+                <input type="text" id="reg_khmer_name" required
+                       class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none" 
+                       placeholder="ឧ. សុខ ចាន់ថន" data-i18n-placeholder="ph_khmer_name">
+              </div>
+
+              <div>
+                <label for="reg_latin_name" class="block text-xs font-bold text-slate-700 mb-1" data-i18n="lbl_latin_name">
+                  ឈ្មោះជាអក្សរឡាតាំង (Latin Name) *
+                </label>
+                <input type="text" id="reg_latin_name" required uppercase
+                       class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none uppercase" 
+                       placeholder="e.g. SOK CHANTHORN" data-i18n-placeholder="ph_latin_name">
+              </div>
+
+              <div>
+                <label for="reg_gender" class="block text-xs font-bold text-slate-700 mb-1" data-i18n="lbl_gender">
+                  ភេទ *
+                </label>
+                <select id="reg_gender" required
+                        class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none bg-white">
+                  <option value="" disabled selected data-i18n-option="opt_select_gender">-- ជ្រើសរើសភេទ --</option>
+                  <option value="Male" data-i18n-option="opt_male">ប្រុស (Male)</option>
+                  <option value="Female" data-i18n-option="opt_female">ស្រី (Female)</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="reg_dob" class="block text-xs font-bold text-slate-700 mb-1" data-i18n="lbl_dob">
+                  ថ្ងៃខែឆ្នាំកំណើត *
+                </label>
+                <input type="date" id="reg_dob" required
+                       class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none bg-white">
+              </div>
+
+              <div class="sm:col-span-2">
+                <label for="reg_pob" class="block text-xs font-bold text-slate-700 mb-1" data-i18n="lbl_pob">
+                  ទីកន្លែងកំណើត *
+                </label>
+                <input type="text" id="reg_pob" required
+                       class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none" 
+                       placeholder="ឃុំ/សង្កាត់, ស្រុក/ខណ្ឌ, ខេត្ត/រាជធានី" data-i18n-placeholder="ph_pob">
+              </div>
+
+              <div>
+                <label for="reg_phone" class="block text-xs font-bold text-slate-700 mb-1" data-i18n="lbl_phone">
+                  លេខទូរស័ព្ទសិស្ស ឬតេឡេក្រាម *
+                </label>
+                <input type="tel" id="reg_phone" required
+                       class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none" 
+                       placeholder="012 345 678" data-i18n-placeholder="ph_phone">
+              </div>
+
+              <div>
+                <label for="reg_email" class="block text-xs font-bold text-slate-700 mb-1" data-i18n="lbl_email">
+                  អាសយដ្ឋានអ៊ីមែល (ប្រសិនបើមាន)
+                </label>
+                <input type="email" id="reg_email"
+                       class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none" 
+                       placeholder="student@example.com" data-i18n-placeholder="ph_email">
+              </div>
+
+              <div class="sm:col-span-2">
+                <label for="reg_address" class="block text-xs font-bold text-slate-700 mb-1" data-i18n="lbl_address">
+                  អាសយដ្ឋានបច្ចុប្បន្ន *
+                </label>
+                <input type="text" id="reg_address" required
+                       class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none" 
+                       placeholder="ផ្ទះលេខ, ភូមិ, សង្កាត់, ក្រុងតាខ្មៅ..." data-i18n-placeholder="ph_address">
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= STEP 2: ACADEMIC DETAILS ================= -->
+          <div id="step-panel-2" class="space-y-6 hidden">
+            <div class="border-b border-slate-100 pb-3">
+              <h3 class="text-lg font-bold text-emerald-800 flex items-center gap-2 font-khmer-sub">
+                <i class="fa-solid fa-book-open-reader text-emerald-600"></i>
+                <span data-i18n="step2_label">ជម្រើសថ្នាក់រៀន និងផ្នែកសិក្សា</span>
+              </h3>
+              <p class="text-xs text-slate-500">ជ្រើសរើសកម្រិតថ្នាក់ និងផ្នែកសិក្សាស្របតាមគោលដៅអនាគត</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="reg_grade" class="block text-xs font-bold text-slate-700 mb-1" data-i18n="lbl_applying_grade">
+                  កម្រិតថ្នាក់ដែលត្រូវចុះឈ្មោះ *
+                </label>
+                <select id="reg_grade" required
+                        class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none bg-white">
+                  <option value="Grade 10" data-i18n-option="opt_grade_10">ថ្នាក់ទី ១០ (Grade 10) - មធ្យមសិក្សាទុតិយភូមិ</option>
+                  <option value="Grade 11" data-i18n-option="opt_grade_11">ថ្នាក់ទី ១១ (Grade 11)</option>
+                  <option value="Grade 12" data-i18n-option="opt_grade_12">ថ្នាក់ទី ១២ (Grade 12) - ត្រៀមប្រឡងបាក់ឌុប</option>
+                  <option value="Lower Secondary" data-i18n-option="opt_grade_7_9">ថ្នាក់អនុវិទ្យាល័យ (ថ្នាក់ទី ៧ ដល់ ទី ៩)</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="reg_stream" class="block text-xs font-bold text-slate-700 mb-1" data-i18n="lbl_stream">
+                  ជ្រើសរើសផ្នែកសិក្សា *
+                </label>
+                <select id="reg_stream" required
+                        class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none bg-white">
+                  <option value="Science Track" data-i18n-option="opt_stream_science">🔬 ថ្នាក់វិទ្យាសាស្ត្រពិត (Science Track)</option>
+                  <option value="Social Science Track" data-i18n-option="opt_stream_social">📚 ថ្នាក់វិទ្យាសាស្ត្រសង្គម (Social Science Track)</option>
+                  <option value="General" data-i18n-option="opt_stream_general">🏫 ថ្នាក់ចំណេះទូទៅធម្មតា</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="reg_prev_school" class="block text-xs font-bold text-slate-700 mb-1" data-i18n="lbl_prev_school">
+                  ឈ្មោះសាលារៀនចាស់ (សាលាដែលទើបបញ្ចប់) *
+                </label>
+                <input type="text" id="reg_prev_school" required
+                       class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none" 
+                       placeholder="ឧ. អនុវិទ្យាល័យតាខ្មៅ..." data-i18n-placeholder="ph_prev_school">
+              </div>
+
+              <div>
+                <label for="reg_prev_result" class="block text-xs font-bold text-slate-700 mb-1" data-i18n="lbl_prev_result">
+                  និទ្ទេស ឬលទ្ធផលឆ្នាំមុន *
+                </label>
+                <select id="reg_prev_result" required
+                        class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none bg-white">
+                  <option value="" disabled selected data-i18n-option="opt_select_result">-- ជ្រើសរើសលទ្ធផល --</option>
+                  <option value="High Distinction (Grade A/B)" data-i18n-option="opt_pass_good">ជាប់កម្រិតល្អប្រសើរ (Grade A / B)</option>
+                  <option value="Average Pass (Grade C/D)" data-i18n-option="opt_pass_fair">ជាប់កម្រិតមធ្យម / ល្អបង្គួរ (Grade C / D)</option>
+                  <option value="Standard Pass (Grade E)" data-i18n-option="opt_pass_standard">ជាប់កម្រិតស្តង់ដារ (Grade E)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= STEP 3: GUARDIAN INFORMATION ================= -->
+          <div id="step-panel-3" class="space-y-6 hidden">
+            <div class="border-b border-slate-100 pb-3">
+              <h3 class="text-lg font-bold text-emerald-800 flex items-center gap-2 font-khmer-sub">
+                <i class="fa-solid fa-hands-holding-child text-emerald-600"></i>
+                <span data-i18n="step3_label">ព័ត៌មានឪពុកម្តាយ ឬអាណាព្យាបាល</span>
+              </h3>
+              <p class="text-xs text-slate-500">ព័ត៌មានទំនាក់ទំនងសម្រាប់សាលាជូនដំណឹង និងសហការ</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="reg_guardian_name" class="block text-xs font-bold text-slate-700 mb-1" data-i18n="lbl_guardian_name">
+                  ឈ្មោះឪពុកម្តាយ ឬអាណាព្យាបាល *
+                </label>
+                <input type="text" id="reg_guardian_name" required
+                       class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none" 
+                       placeholder="ឈ្មោះពេញរបស់អាណាព្យាបាល" data-i18n-placeholder="ph_guardian_name">
+              </div>
+
+              <div>
+                <label for="reg_guardian_rel" class="block text-xs font-bold text-slate-700 mb-1" data-i18n="lbl_guardian_rel">
+                  ទំនាក់ទំនងត្រូវជា *
+                </label>
+                <select id="reg_guardian_rel" required
+                        class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none bg-white">
+                  <option value="Father" data-i18n-option="opt_father">ឪពុក (Father)</option>
+                  <option value="Mother" data-i18n-option="opt_mother">ម្តាយ (Mother)</option>
+                  <option value="Guardian" data-i18n-option="opt_guardian">អាណាព្យាបាលស្របច្បាប់ (Guardian)</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="reg_guardian_phone" class="block text-xs font-bold text-slate-700 mb-1" data-i18n="lbl_guardian_phone">
+                  លេខទូរស័ព្ទអាណាព្យាបាល *
+                </label>
+                <input type="tel" id="reg_guardian_phone" required
+                       class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none" 
+                       placeholder="089 123 456" data-i18n-placeholder="ph_guardian_phone">
+              </div>
+
+              <div>
+                <label for="reg_guardian_occ" class="block text-xs font-bold text-slate-700 mb-1" data-i18n="lbl_guardian_occ">
+                  មុខរបរអាណាព្យាបាល
+                </label>
+                <input type="text" id="reg_guardian_occ"
+                       class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none" 
+                       placeholder="ឧ. មន្ត្រីរាជការ, អាជីវករ..." data-i18n-placeholder="ph_guardian_occ">
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= STEP 4: DOCUMENTS & PHOTO ================= -->
+          <div id="step-panel-4" class="space-y-6 hidden">
+            <div class="border-b border-slate-100 pb-3">
+              <h3 class="text-lg font-bold text-emerald-800 flex items-center gap-2 font-khmer-sub">
+                <i class="fa-solid fa-cloud-arrow-up text-emerald-600"></i>
+                <span data-i18n="step4_label">ឯកសារភ្ជាប់ និងរូបថតសិស្ស</span>
+              </h3>
+              <p class="text-xs text-slate-500">អ្នកអាចបញ្ចូលរូបថត និងឯកសារ ឬអាចយកមកជូនសាលាផ្ទាល់បាន</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              
+              <!-- Photo Upload with Preview -->
+              <div class="space-y-2">
+                <label class="block text-xs font-bold text-slate-700" data-i18n="lbl_photo_upload">
+                  រូបថតសិស្ស (ខ្នាត 4x6 ផ្ទៃខៀវ/ស) *
+                </label>
+                <div class="file-dropzone p-4 rounded-2xl flex flex-col items-center justify-center text-center cursor-pointer bg-slate-50 relative">
+                  <input type="file" id="reg_photo_file" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer w-full h-full">
+                  <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl mb-2">
+                    <i class="fa-solid fa-camera"></i>
+                  </div>
+                  <span class="text-xs font-semibold text-emerald-800" data-i18n="desc_photo_upload">
+                    ចុចដើម្បីជ្រើសរើសរូបថតសិស្ស ឬទាញទម្លាក់ទីនេះ
+                  </span>
+                  <span class="text-[10px] text-slate-400 mt-1">JPG, PNG ឬ WEBP (អតិបរមា 5MB)</span>
+                </div>
+
+                <!-- Preview container -->
+                <div id="photo-preview-container" class="hidden flex items-center gap-3 bg-emerald-50 p-2.5 rounded-xl border border-emerald-200">
+                  <img id="photo-preview" src="" alt="Preview" class="w-12 h-14 object-cover rounded-lg border border-emerald-400">
+                  <div class="text-xs text-emerald-900">
+                    <span class="font-bold block">✓ រូបថតត្រូវបានជ្រើសរើស</span>
+                    <span class="text-[11px] text-emerald-700">រូបភាពនឹងបង្ហាញលើប័ណ្ណចុះឈ្មោះ</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Other documents -->
+              <div class="space-y-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="lbl_birth_cert">
+                    សំបុត្រកំណើត ឬសៀវភៅស្នាក់នៅ (ច្បាប់ចម្លង)
+                  </label>
+                  <div class="file-dropzone p-3 rounded-xl flex items-center justify-between text-xs text-slate-600 bg-slate-50 cursor-pointer relative">
+                    <input type="file" accept=".pdf,image/*" class="absolute inset-0 opacity-0 cursor-pointer">
+                    <span class="flex items-center gap-2">
+                      <i class="fa-regular fa-file-pdf text-rose-500 text-base"></i>
+                      <span data-i18n="desc_birth_cert">ឯកសារបញ្ជាក់អត្តសញ្ញាណ (PDF, JPG)</span>
+                    </span>
+                    <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[11px] font-semibold">ជ្រើសរើស</span>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="lbl_transcript">
+                    ព្រឹត្តិបត្រពិន្ទុ ឬលិខិតបញ្ជាក់ការសិក្សា
+                  </label>
+                  <div class="file-dropzone p-3 rounded-xl flex items-center justify-between text-xs text-slate-600 bg-slate-50 cursor-pointer relative">
+                    <input type="file" accept=".pdf,image/*" class="absolute inset-0 opacity-0 cursor-pointer">
+                    <span class="flex items-center gap-2">
+                      <i class="fa-regular fa-file-lines text-blue-500 text-base"></i>
+                      <span data-i18n="desc_transcript">លទ្ធផលនៃការបញ្ចប់ការសិក្សាឆ្នាំចាស់</span>
+                    </span>
+                    <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[11px] font-semibold">ជ្រើសរើស</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ================= STEP 5: REVIEW & CONFIRM ================= -->
+          <div id="step-panel-5" class="space-y-6 hidden">
+            <div class="border-b border-slate-100 pb-3">
+              <h3 class="text-lg font-bold text-emerald-800 flex items-center gap-2 font-khmer-sub">
+                <i class="fa-solid fa-list-check text-emerald-600"></i>
+                <span data-i18n="step5_label">ផ្ទៀងផ្ទាត់ និងបញ្ជាក់ការចុះឈ្មោះ</span>
+              </h3>
+              <p class="text-xs text-slate-500" data-i18n="review_warn">
+                ព័ត៌មានដែលបានបំពេញនឹងត្រូវប្រើប្រាស់សម្រាប់បញ្ជីឈ្មោះសិស្សផ្លូវការ និងការរៀបចំប័ណ្ណសិស្ស។
+              </p>
+            </div>
+
+            <!-- Dynamic Review Summary Container -->
+            <div id="review-summary-content"></div>
+
+            <!-- Declaration Checkbox -->
+            <div class="bg-amber-50 border border-amber-200 p-4 rounded-2xl">
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" id="reg_declaration" required
+                       class="mt-1 w-4 h-4 rounded text-emerald-600 focus:ring-emerald-500 border-slate-300">
+                <span class="text-xs font-semibold text-amber-950 leading-relaxed" data-i18n="lbl_declaration">
+                  ខ្ញុំបាទ/នាងខ្ញុំសូមធានាអះអាងថា ព័ត៌មានដែលបានផ្តល់ជូនខាងលើពិតជាត្រឹមត្រូវពិតប្រាកដមែន។
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Wizard Action Navigation Buttons -->
+          <div class="pt-6 border-t border-slate-100 flex items-center justify-between">
+            <button type="button" id="wizard-prev-btn" 
+                    class="px-5 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-50 text-xs sm:text-sm font-semibold transition"
+                    data-i18n="btn_prev">
+              ← ត្រឡប់ក្រោយ
+            </button>
+
+            <div class="flex items-center gap-3">
+              <button type="button" id="wizard-next-btn"
+                      class="px-6 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs sm:text-sm font-bold shadow-md transition"
+                      data-i18n="btn_next">
+                បន្តទៅមុខទៀត →
+              </button>
+
+              <button type="submit" id="wizard-submit-btn"
+                      class="px-6 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs sm:text-sm font-bold shadow-md transition hidden"
+                      data-i18n="btn_submit_reg">
+                ✓ បញ្ជូនពាក្យចុះឈ្មោះ
+              </button>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+
+      <!-- ==========================================================================
+           APPLICATION STATUS LOOKUP TOOL
+           ========================================================================== -->
+      <div id="check-status" class="mt-12 bg-white/10 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-white/20 text-white">
+        <div class="max-w-xl mx-auto text-center space-y-3">
+          <h3 class="text-lg font-bold text-amber-400 font-khmer-sub" data-i18n="status_box_title">
+            🔎 ពិនិត្យស្ថានភាពពាក្យសុំចុះឈ្មោះ
+          </h3>
+          <p class="text-xs text-slate-200" data-i18n="status_box_desc">
+            បញ្ចូលលេខកូដពាក្យសុំ (ឧ. HSS-2026-1042) ឬលេខទូរស័ព្ទដែលបានចុះឈ្មោះដើម្បីតាមដានដំណើរការ៖
+          </p>
+          <div class="flex flex-col sm:flex-row gap-2 pt-2">
+            <input type="text" id="status-query-input"
+                   class="flex-1 px-4 py-2.5 rounded-xl bg-white text-slate-900 placeholder-slate-400 text-sm outline-none focus:ring-2 focus:ring-amber-400"
+                   placeholder="បញ្ចូលលេខកូដពាក្យ ឬលេខទូរស័ព្ទ..." data-i18n-placeholder="ph_status_input">
+            <button type="button" id="btn-check-status-trigger"
+                    class="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-xl text-xs transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span data-i18n="btn_check_status">ស្វែងរកពាក្យសុំ</span>
+            </button>
+          </div>
+
+          <!-- Result Container -->
+          <div id="status-result-display" class="hidden text-left mt-4"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       NEWS & CAMPUS ANNOUNCEMENTS
+       ========================================================================== -->
+  <section id="news" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="inline-block text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full mb-3" data-i18n="news_badge">
+        ព្រឹត្តិការណ៍ និងសេចក្តីជូនដំណឹង
+      </span>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 font-khmer-sub leading-tight mb-4" data-i18n="news_title">
+        ព័ត៌មានថ្មីៗពីវិទ្យាល័យ
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- News 1 -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-3 text-xs">
+            <span class="bg-emerald-100 text-emerald-800 font-bold px-3 py-1 rounded-full" data-i18n="news1_tag">ការចុះឈ្មោះ</span>
+            <span class="text-slate-400" data-i18n="news1_date">០១ កញ្ញា ២០២៦</span>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base mb-2 hover:text-emerald-700 transition" data-i18n="news1_title">
+            សេចក្តីជូនដំណឹងស្តីពីការទទួលពាក្យចុះឈ្មោះចូលរៀនឆ្នាំសិក្សា ២០២៦-២០២៧
+          </h3>
+          <p class="text-xs text-slate-500 leading-relaxed" data-i18n="news1_desc">
+            វិទ្យាល័យចាប់ផ្តើមទទួលពាក្យចុះឈ្មោះតាមប្រព័ន្ធអនឡាញ និងនៅការិយាល័យរដ្ឋបាលសាលា ចាប់ពីថ្ងៃនេះតទៅ។
+          </p>
+        </div>
+        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 text-xs font-bold text-emerald-800 flex items-center justify-between">
+          <span>អានលម្អិត</span>
+          <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        </div>
+      </div>
+
+      <!-- News 2 -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-3 text-xs">
+            <span class="bg-blue-100 text-blue-800 font-bold px-3 py-1 rounded-full" data-i18n="news2_tag">បច្ចេកវិទ្យា STEM</span>
+            <span class="text-slate-400" data-i18n="news2_date">២៨ សីហា ២០២៦</span>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base mb-2 hover:text-emerald-700 transition" data-i18n="news2_title">
+            ការបើកសម្ពោធបន្ទប់ពិសោធន៍ឌីជីថល និងរ៉ូបូតគំរូសម្រាប់សិស្សានុសិស្ស
+          </h3>
+          <p class="text-xs text-slate-500 leading-relaxed" data-i18n="news2_desc">
+            ដើម្បីពង្រឹងសមត្ថភាពសិស្សផ្នែកបច្ចេកវិទ្យា សាលាបានដាក់ដំណើរការសម្ភារកុំព្យូទ័រថ្មី និងកម្មវិធី LMS។
+          </p>
+        </div>
+        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 text-xs font-bold text-emerald-800 flex items-center justify-between">
+          <span>អានលម្អិត</span>
+          <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        </div>
+      </div>
+
+      <!-- News 3 -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-3 text-xs">
+            <span class="bg-amber-100 text-amber-800 font-bold px-3 py-1 rounded-full" data-i18n="news3_tag">កិត្តិយស និងជ័យលាភី</span>
+            <span class="text-slate-400" data-i18n="news3_date">១៥ សីហា ២០២៦</span>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base mb-2 hover:text-emerald-700 transition" data-i18n="news3_title">
+            អបអរសាទរសិស្សានុសិស្សវិទ្យាល័យ ហ៊ុន សែន សេរីភាព ទទួលបាននិទ្ទេស A
+          </h3>
+          <p class="text-xs text-slate-500 leading-relaxed" data-i18n="news3_desc">
+            សិស្សានុសិស្សឆ្នើមទទួលបានការលើកទឹកចិត្ត និងអាហារូបករណ៍បន្តការសិក្សានៅថ្នាក់ឧត្តមសិក្សា។
+          </p>
+        </div>
+        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 text-xs font-bold text-emerald-800 flex items-center justify-between">
+          <span>អានលម្អិត</span>
+          <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT & LOCATION INFORMATION
+       ========================================================================== -->
+  <section id="contact" class="py-20 bg-slate-100/80 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="inline-block text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full mb-3" data-i18n="contact_badge">
+          ព័ត៌មានទំនាក់ទំនង
+        </span>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 font-khmer-sub leading-tight mb-4" data-i18n="contact_title">
+          ទីតាំង និងការិយាល័យរដ្ឋបាល
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Left Column: Contact details and Interactive Map -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 space-y-4">
+            
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-map-location-dot"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="contact_address_lbl">អាសយដ្ឋានសាលា</h4>
+                <p class="text-sm font-semibold text-slate-800 mt-1" data-i18n="contact_address_val">
+                  សង្កាត់តាខ្មៅ ក្រុងតាខ្មៅ ខេត្តកណ្តាល ព្រះរាជាណាចក្រកម្ពុជា
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="contact_phone_lbl">លេខទូរស័ព្ទរដ្ឋបាល</h4>
+                <p class="text-sm font-semibold text-slate-800 mt-1">
+                  024 935 555 / 012 345 678
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-800 flex items-center justify-center shrink-0">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="contact_hours_lbl">ម៉ោងបម្រើការងារ</h4>
+                <p class="text-sm font-semibold text-slate-800 mt-1" data-i18n="contact_hours_val">
+                  ចន្ទ - សៅរ៍: ៧:០០ ព្រឹក - ៥:០០ ល្ងាច
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-800 flex items-center justify-center shrink-0">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="contact_email_lbl">អ៊ីមែលផ្លូវការ</h4>
+                <p class="text-sm font-semibold text-slate-800 mt-1">
+                  info@hunsensereipheap.edu.kh
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Embedded Map of Takhmao City, Kandal -->
+          <div class="rounded-3xl overflow-hidden shadow-sm border border-slate-200 h-64 relative bg-slate-200">
+            <iframe 
+              title="Hun Sen Sereipheap High School Map Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15639.670559132517!2d104.945209!3d11.481541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109509dfaa9580b%3A0xe5435e0766e4a682!2sKrong%20Ta%20Khmau!5e0!3m2!1sen!2skh!4v1700000000000"
+              class="w-full h-full border-0" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Right Column: Quick Contact Inquiry Form -->
+        <div class="lg:col-span-6">
+          <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200">
+            <h3 class="text-lg font-bold text-slate-900 mb-4 font-khmer-sub" data-i18n="lbl_send_msg">
+              ផ្ញើសារសាកសួរព័ត៌មានបន្ថែម
+            </h3>
+            <form id="contact-form" class="space-y-4">
+              <div>
+                <label for="msg_name" class="block text-xs font-bold text-slate-700 mb-1">ឈ្មោះរបស់អ្នក</label>
+                <input type="text" id="msg_name" required
+                       class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 outline-none" 
+                       placeholder="ឈ្មោះរបស់អ្នក" data-i18n-placeholder="ph_msg_name">
+              </div>
+              <div>
+                <label for="msg_phone" class="block text-xs font-bold text-slate-700 mb-1">លេខទូរស័ព្ទរបស់អ្នក</label>
+                <input type="tel" id="msg_phone" required
+                       class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 outline-none" 
+                       placeholder="លេខទូរស័ព្ទរបស់អ្នក" data-i18n-placeholder="ph_msg_phone">
+              </div>
+              <div>
+                <label for="msg_content" class="block text-xs font-bold text-slate-700 mb-1">សេចក្តីលម្អិតនៃសារ</label>
+                <textarea id="msg_content" rows="4" required
+                          class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 outline-none" 
+                          placeholder="សេចក្តីលម្អិតនៃសារ..." data-i18n-placeholder="ph_msg_content"></textarea>
+              </div>
+              <button type="submit" 
+                      class="w-full py-3 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-xl text-sm transition shadow-md flex items-center justify-center gap-2">
+                <i class="fa-regular fa-paper-plane"></i>
+                <span data-i18n="btn_send_msg">ផ្ញើសារឥឡូវនេះ</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-12">
+        
+        <!-- Brand Info -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="assets/images/logo.jpg" alt="Logo" class="w-12 h-12 rounded-full border border-emerald-600">
+            <div>
+              <h3 class="font-khmer-title text-emerald-400 text-base">វិទ្យាល័យ ហ៊ុន សែន សេរីភាព</h3>
+              <p class="text-[11px] text-slate-400 uppercase tracking-wider">HUN SEN SEREIPHEAP HIGH SCHOOL</p>
+            </div>
+          </div>
+          <p class="text-slate-400 leading-relaxed max-w-md" data-i18n="footer_desc">
+            វិទ្យាល័យ ហ៊ុន សែន សេរីភាព ក្រុងតាខ្មៅ ខេត្តកណ្តាល ជាគ្រឹះស្ថានអប់រំចំណេះទូទៅឈានមុខគេក្នុងការអភិវឌ្ឍធនធានមនុស្ស និងបច្ចេកវិទ្យា។
+          </p>
+          <div class="flex items-center gap-3 text-base text-slate-300">
+            <a href="#" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-emerald-600 flex items-center justify-center transition"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-emerald-600 flex items-center justify-center transition"><i class="fa-brands fa-telegram"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-emerald-600 flex items-center justify-center transition"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="text-slate-200 font-bold uppercase tracking-wider text-xs" data-i18n="footer_quick_links">តំណភ្ជាប់រហ័ស</h4>
+          <ul class="space-y-2">
+            <li><a href="#about" class="hover:text-emerald-400 transition" data-i18n="nav_about">អំពីសាលា</a></li>
+            <li><a href="#academics" class="hover:text-emerald-400 transition" data-i18n="nav_academics">កម្មវិធីសិក្សា</a></li>
+            <li><a href="#stem" class="hover:text-emerald-400 transition" data-i18n="nav_stem">STEM & បច្ចេកវិទ្យា</a></li>
+            <li><a href="#campus" class="hover:text-emerald-400 transition" data-i18n="nav_campus">ជីវិតសិក្សា</a></li>
+            <li><a href="#registration-section" class="hover:text-emerald-400 transition" data-i18n="nav_register">ចុះឈ្មោះចូលរៀន</a></li>
+          </ul>
+        </div>
+
+        <!-- Official MoEYS Links -->
+        <div class="lg:col-span-4 space-y-3">
+          <h4 class="text-slate-200 font-bold uppercase tracking-wider text-xs" data-i18n="footer_moeys">ក្រសួងអប់រំ យុវជន និងកីឡា (MoEYS)</h4>
+          <p class="text-slate-400 leading-relaxed">
+            ស្ថិតក្រោមការគ្រប់គ្រងរបស់មន្ទីរអប់រំ យុវជន និងកីឡាខេត្តកណ្តាល និងក្រសួងអប់រំ យុវជន និងកីឡានៃព្រះរាជាណាចក្រកម្ពុជា។
+          </p>
+          <div class="pt-2">
+            <span class="inline-block bg-slate-800 text-slate-300 text-[11px] px-3 py-1 rounded-lg border border-slate-700">
+              🏫 Takhmao, Kandal, Cambodia
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright -->
+      <div class="border-t border-slate-800 pt-8 text-center text-slate-500 text-xs">
+        <p data-i18n="footer_copyright">
+          © ២០២៦ វិទ្យាល័យ ហ៊ុន សែន សេរីភាព (Hun Sen Sereipheap High School). រក្សាសិទ្ធិគ្រប់យ៉ាង។
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       CONFIRMATION & PRINTABLE SLIP MODAL
+       ========================================================================== -->
+  <div id="slip-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[92vh] overflow-y-auto shadow-2xl relative animate-fade-in p-6">
+      
+      <!-- Top modal controls -->
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100 mb-4 no-print">
+        <div class="flex items-center gap-2">
+          <span class="text-emerald-700 text-lg font-bold">🎉 ការចុះឈ្មោះបានសម្រេច</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="window.print()" class="bg-emerald-700 hover:bg-emerald-800 text-white text-xs px-3.5 py-2 rounded-xl font-bold flex items-center gap-1.5 transition shadow">
+            <i class="fa-solid fa-print"></i>
+            <span data-i18n="btn_print_slip">បោះពុម្ពប័ណ្ណចុះឈ្មោះ</span>
+          </button>
+          <button onclick="closeConfirmationSlip()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Printable Slip Area -->
+      <div id="printable-slip"></div>
+
+      <!-- Bottom Close Button -->
+      <div class="mt-6 text-center no-print">
+        <button onclick="closeConfirmationSlip()" class="px-6 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs transition" data-i18n="btn_close">
+          បិទ
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       IMAGE LIGHTBOX MODAL
+       ========================================================================== -->
+  <div id="image-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 hidden" onclick="closeImageModal()">
+    <div class="max-w-4xl w-full relative" onclick="event.stopPropagation()">
+      <button onclick="closeImageModal()" class="absolute -top-12 right-0 text-white/80 hover:text-white text-2xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="rounded-2xl overflow-hidden shadow-2xl bg-black">
+        <img id="modal-image-src" src="" alt="Full view" class="w-full max-h-[75vh] object-contain mx-auto">
+      </div>
+      <div class="mt-4 text-center text-white">
+        <h3 id="modal-image-title" class="font-bold text-lg"></h3>
+        <p id="modal-image-sub" class="text-xs text-slate-300 mt-1"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       TOAST NOTIFICATION CONTAINER
+       ========================================================================== -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- Custom Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
